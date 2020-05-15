@@ -47,7 +47,7 @@ public class ParrotMovement : MonoBehaviour
         rotX -= Input.GetAxis ("Mouse Y") * Time.deltaTime * rotationSpeed;
         rotY += Input.GetAxis ("Mouse X") * Time.deltaTime * rotationSpeed;
 
-        //transform.rotation = Quaternion.Euler (0, rotY, 0);
+        transform.rotation = Quaternion.Euler (0, rotY, 0);
 
        if (Input.GetKeyDown(KeyCode.Space) && grounded)
 
