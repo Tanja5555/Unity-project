@@ -10,7 +10,7 @@ public class ParrotMovement : MonoBehaviour
     private float jumpForce = 5f;
 	private float xMovement;
 	private float zMovement;
-    private float rotationSpeed = 2f;
+    private float rotationSpeed = 9f;
     public float rotX;
     public float rotY;
     public float rotZ;
@@ -22,7 +22,7 @@ public class ParrotMovement : MonoBehaviour
 
 	private RaycastHit hitInfo;
 
-    bool shouldJump = false;
+    private bool shouldJump = false;
     private bool grounded = false;
 
     private Rigidbody rb;
@@ -53,12 +53,14 @@ public class ParrotMovement : MonoBehaviour
 
         {
             shouldJump = true;
+            Debug.Log("Jumping");
         }
 
-        if(Physics.Raycast(transform.position, -transform.up, out hitInfo, 0.6f, groundMask))
+        if(Physics.Raycast(transform.position, -transform.up, out hitInfo, 1.6f, groundMask))
 
         {
             grounded = true;
+            
         }
 
         else
